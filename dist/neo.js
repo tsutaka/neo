@@ -890,8 +890,7 @@ Neo.createContainer = function(applet) {
     var neo = document.createElement("div");
     neo.className = "NEO";
     neo.id = "NEO";
-    var html = (function() {/*
-
+    var html = (function(param) {return param[0].replace(/\n|\r/g, "");})`
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <div id="pageView" style="width:450px; height:470px; margin:auto;">
@@ -976,7 +975,7 @@ Neo.createContainer = function(applet) {
 </div>
 
 
-                                 */}).toString().match(/\/\*([^]*)\*\//)[1];
+`
 
     neo.innerHTML = html.replace(/\[(.*?)\]/g, function(match, str) {
 	return Neo.translate(str)
@@ -6053,7 +6052,7 @@ Neo.createViewer = function(applet) {
     var neo = document.createElement("div");
     neo.className = "NEO";
     neo.id = "NEO";
-    var html = (function() {/*
+    var html = (function(param) {return param[0].replace(/\n|\r/g, "");})`
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <div id="pageView" style="margin:auto;">
@@ -6085,7 +6084,7 @@ Neo.createViewer = function(applet) {
 
 </div>
 </div>
-                                 */}).toString().match(/\/\*([^]*)\*\//)[1];
+`
 
     neo.innerHTML = html.replace(/\[(.*?)\]/g, function(match, str) {
 	return Neo.translate(str)
